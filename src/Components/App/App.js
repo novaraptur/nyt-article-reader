@@ -1,6 +1,7 @@
 import './App.css';
 
 import Header from '../Header/Header';
+import ArticlesList from '../ArticlesList/ArticlesList';
 import Search from '../Search/Search';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <main>
       <Header />
       <Search />
+      <ArticlesList />
     </main>
   );
 }
