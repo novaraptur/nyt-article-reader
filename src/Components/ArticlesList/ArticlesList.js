@@ -1,8 +1,12 @@
 import './ArticlesList.css';
 
+import ArticleCard from '../ArticleCard/ArticleCard';
+
 const ArticlesList = () => {
   return (
-    <h2>Articles here</h2>
+    <section className="articles-list">
+      <ArticleCard />
+    </section>
   );
 }
 
