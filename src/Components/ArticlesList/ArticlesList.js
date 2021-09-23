@@ -7,13 +7,15 @@ const ArticlesList = ({allArticles}) => {
   const results = allArticles.results;
 
   const generateArticleCards = () => {
-    
+    console.log(results);
+    return results.map((result) => {
+      return <h2>M</h2>
+    })
   }
 
   return (
     <section className="articles-list">
-      {generateArticleCards()}
-      <h4>{allArticles.copyright}</h4>
+      {!allArticles.results ? <h2>Loading . . .</h2> : generateArticleCards()}
     </section>
   );
 }

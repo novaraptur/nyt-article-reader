@@ -26,8 +26,7 @@ const App = () => {
     <main>
       <Header />
       <Search />
-      {!allArticles && <h2>Loading articles . . .</h2>}
-      {!!allArticles && <ArticlesList allArticles={allArticles} />}
+      <ArticlesList allArticles={allArticles} />
     </main>
   );
 }
