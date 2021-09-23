@@ -24,6 +24,8 @@ const App = () => {
       })
   }, []);
 
+  console.log(allArticles);
+
   const filterArticles = (userSelectedSection) => {
     const filteredArticles = allArticles.results.filter((article) => {
       if (article.section.includes(userSelectedSection)) {

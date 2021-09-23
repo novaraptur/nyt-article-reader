@@ -1,10 +1,24 @@
 import './Search.css';
 
+import { useState } from 'react';
+
 const Search = ({filterArticles}) => {
+  const [userSelectedSection, setUserSelectedSection] = useState('');
+
+  const updateUserSelectedSection = (event) => {
+    event.preventDefault();
+    setUserSelectedSection(event.target.value);
+  }
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    filterArticles(userSelectedSection);
+  }
+
   return (
     <form>
-      <label for="userSelectedSection">Section:</label>
-      <select name="userSelectedSection" id="userSelectedSection">
+      <label htmlFor="userSelectedSection">Section:</label>
+      <select onChange={updateUserSelectedSection} name="userSelectedSection" id="userSelectedSection">
         <option value="home">Home</option>
         <option value="arts">Arts</option>
         <option value="automobiles">Automobiles</option>
@@ -33,7 +47,7 @@ const Search = ({filterArticles}) => {
         <option value="us">U.S.</option>
         <option value="world">World</option>
       </select>
-      <button>Search For This Category</button>
+      <button onClick={handleClick}>Search For This Category</button>
     </form>
   );
 }
