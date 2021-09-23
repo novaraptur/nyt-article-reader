@@ -1,0 +1,14 @@
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+select {
+  width: 30%;
+}
+
+.form-element {
+  margin: .5%;
+}

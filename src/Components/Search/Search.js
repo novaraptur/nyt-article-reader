@@ -17,8 +17,8 @@ const Search = ({filterArticles}) => {
 
   return (
     <form>
-      <label htmlFor="userSelectedSection">Section:</label>
-      <select onChange={updateUserSelectedSection} name="userSelectedSection" id="userSelectedSection">
+      <label htmlFor="userSelectedSection" className="form-element">Section:</label>
+      <select onChange={updateUserSelectedSection} name="userSelectedSection" id="userSelectedSection" className="form-element">
         <option value="home">Home</option>
         <option value="arts">Arts</option>
         <option value="automobiles">Automobiles</option>
@@ -47,7 +47,7 @@ const Search = ({filterArticles}) => {
         <option value="us">U.S.</option>
         <option value="world">World</option>
       </select>
-      <button onClick={handleClick}>Search For This Category</button>
+      <button onClick={handleClick} className="form-element">Search For This Category</button>
     </form>
   );
 }
