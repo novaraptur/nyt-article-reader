@@ -27,9 +27,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/:article-id"
+        <Route exact path="/:created_date"
           render={({match}) => {
-            return <ArticlePage />
+            return <ArticlePage allArticles={allArticles} created_date={match} />
           }}
         />
         <Route exact path="/"
