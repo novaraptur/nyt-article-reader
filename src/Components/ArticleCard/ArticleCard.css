@@ -1,0 +1,18 @@
+.article-card {
+  border: 1px solid black;
+  margin: 2% 0%;
+  padding: 1%;
+  width: 28%;
+}
+
+.article-card:hover {
+  background-color: black;
+  color: white;
+  transition-duration: 0.5s;
+}
+
+@media only screen and (max-width: 800px) {
+  .article-card {
+    width: 80%;
+  }
+}

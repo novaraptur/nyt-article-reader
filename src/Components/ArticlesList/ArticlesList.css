@@ -1,0 +1,12 @@
+.articles-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 800px) {
+  .articles-list {
+    align-items: center;
+    flex-direction: column;
+  }
+}

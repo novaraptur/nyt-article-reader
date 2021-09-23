@@ -3,13 +3,12 @@ import './ArticlesList.css';
 import ArticleCard from '../ArticleCard/ArticleCard';
 
 const ArticlesList = ({allArticles}) => {
-  console.log(allArticles);
   const results = allArticles.results;
 
   const generateArticleCards = () => {
     console.log(results);
-    return results.map((result) => {
-      return <h2>M</h2>
+    return results.map((article) => {
+      return <ArticleCard article={article} />
     })
   }
 
