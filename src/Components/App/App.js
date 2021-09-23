@@ -13,6 +13,8 @@ const dotenv = require('dotenv').config();
 
 const App = () => {
   const [allArticles, setAllArticles] = useState({});
+  const [userFilteredArticles, setUserFilteredArticles] = useState([]);
+  const [userFilterError, setUserFilterError] = useState(false);
 
   useEffect(() => {
     getArticles()
@@ -23,6 +25,20 @@ const App = () => {
         console.log(error);
       })
   }, []);
+
+  const filterArticles = (userSelectedSection) => {
+    const filteredArticles = allArticles.results.filter((article) => {
+      if (article.section === userSelectedSection) {
+        return article;
+      }
+    })
+    if (!filteredArticles.length) {
+      setUserFilterError(true);
+    } else {
+      setUserFilterError(false);
+    }
+    setUserFilteredArticles(filteredArticles);
+  }
 
   return (
     <BrowserRouter>
@@ -37,8 +53,9 @@ const App = () => {
             return (
               <main>
                 <Header />
-                <Search />
-                <ArticlesList allArticles={allArticles} />
+                <Search filterArticles={filterArticles} />
+                {!!userFilterError && <h3>No articles match that category.</h3>}
+                {!userFilteredArticles.length ? <ArticlesList allArticles={allArticles} /> : <ArticlesList allArticles={userFilteredArticles} />}
               </main>
             );
           }}

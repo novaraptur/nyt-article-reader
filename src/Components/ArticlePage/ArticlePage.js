@@ -25,6 +25,7 @@ const ArticlePage = ({allArticles, created_date}) => {
           <h3>{foundArticle.byline}</h3>
           <p>{foundArticle.abstract}</p>
           <a href={foundArticle.url} target="_blank">Read the Article Here</a>
+          <h5>{allArticles.copyright}</h5>
         </section>}
     </section>
   );
