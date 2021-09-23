@@ -10,7 +10,6 @@ const ArticlesList = ({allArticles}) => {
     } else {
       results = allArticles;
     }
-    console.log(results);
     return results.map((article) => {
       return <ArticleCard article={article} />
     })
@@ -18,7 +17,7 @@ const ArticlesList = ({allArticles}) => {
 
   return (
     <section className="articles-list">
-      {!allArticles.length ? <h2>Loading . . .</h2> : generateArticleCards()}
+      {!allArticles.length && !allArticles.results ? <h2>Loading . . .</h2> : generateArticleCards()}
     </section>
   );
 }

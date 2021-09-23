@@ -34,8 +34,6 @@ const App = () => {
     setUserFilteredArticles(filteredArticles);
   }
 
-  console.log(userFilteredArticles)
-
   return (
     <BrowserRouter>
       <Switch>
