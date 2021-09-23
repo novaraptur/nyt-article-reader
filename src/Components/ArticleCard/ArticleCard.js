@@ -1,8 +1,11 @@
 import './ArticleCard.css';
 
-const ArticleCard = () => {
+const ArticleCard = ({article}) => {
   return (
-    <h2>Card for each article</h2>
+    <article className="article-card">
+      <h4>{article.title}</h4>
+      <p>{article.abstract}</p>
+    </article>
   );
 }
 

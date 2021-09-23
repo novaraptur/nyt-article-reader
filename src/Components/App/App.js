@@ -22,13 +22,11 @@ const App = () => {
       })
   }, []);
 
-  console.log(allArticles);
-
   return (
     <main>
       <Header />
       <Search />
-      <ArticlesList />
+      <ArticlesList allArticles={allArticles} />
     </main>
   );
 }
