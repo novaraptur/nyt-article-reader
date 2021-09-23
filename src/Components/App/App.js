@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import Header from '../Header/Header';
 import ArticlesList from '../ArticlesList/ArticlesList';
+import ArticlePage from '../ArticlePage/ArticlePage';
 import Search from '../Search/Search';
 
 import { getArticles } from '../../api_calls';
@@ -23,11 +25,26 @@ const App = () => {
   }, []);
 
   return (
-    <main>
-      <Header />
-      <Search />
-      <ArticlesList allArticles={allArticles} />
-    </main>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/:created_date"
+          render={({match}) => {
+            return <ArticlePage allArticles={allArticles} created_date={match} />
+          }}
+        />
+        <Route exact path="/"
+          render={() => {
+            return (
+              <main>
+                <Header />
+                <Search />
+                <ArticlesList allArticles={allArticles} />
+              </main>
+            );
+          }}
+        />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

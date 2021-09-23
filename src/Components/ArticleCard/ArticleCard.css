@@ -1,7 +1,9 @@
 .article-card {
   border: 1px solid black;
+  color: black;
   margin: 2% 0%;
   padding: 1%;
+  text-decoration: none;
   width: 28%;
 }
 

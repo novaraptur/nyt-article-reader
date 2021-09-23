@@ -6,7 +6,6 @@ const ArticlesList = ({allArticles}) => {
   const results = allArticles.results;
 
   const generateArticleCards = () => {
-    console.log(results);
     return results.map((article) => {
       return <ArticleCard article={article} />
     })
