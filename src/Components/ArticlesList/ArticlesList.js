@@ -2,10 +2,18 @@ import './ArticlesList.css';
 
 import ArticleCard from '../ArticleCard/ArticleCard';
 
-const ArticlesList = () => {
+const ArticlesList = ({allArticles}) => {
+  console.log(allArticles);
+  const results = allArticles.results;
+
+  const generateArticleCards = () => {
+    
+  }
+
   return (
     <section className="articles-list">
-      <ArticleCard />
+      {generateArticleCards()}
+      <h4>{allArticles.copyright}</h4>
     </section>
   );
 }

@@ -22,13 +22,12 @@ const App = () => {
       })
   }, []);
 
-  console.log(allArticles);
-
   return (
     <main>
       <Header />
       <Search />
-      <ArticlesList />
+      {!allArticles && <h2>Loading articles . . .</h2>}
+      {!!allArticles && <ArticlesList allArticles={allArticles} />}
     </main>
   );
 }
