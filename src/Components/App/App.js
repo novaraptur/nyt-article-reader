@@ -24,6 +24,15 @@ const App = () => {
       })
   }, []);
 
+  const filterArticles = (userSelectedSection) => {
+    const filteredArticles = allArticles.results.filter((article) => {
+      if (article.section.includes(userSelectedSection)) {
+        return;
+      }
+    })
+    setAllArticles(filteredArticles);
+  }
+
   return (
     <BrowserRouter>
       <Switch>
@@ -37,7 +46,7 @@ const App = () => {
             return (
               <main>
                 <Header />
-                <Search />
+                <Search filterArticles={filterArticles} />
                 <ArticlesList allArticles={allArticles} />
               </main>
             );
