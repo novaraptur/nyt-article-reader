@@ -17,10 +17,10 @@ const ArticlePage = ({allArticles, created_date}) => {
   });
 
   return (
-    <section>
+    <section className="article-container">
       <NavLink to="/"><button>Go Back</button></NavLink>
       {!foundArticle ? <h2>Loading . . .</h2> :
-        <section>
+        <section className="article-content">
           <h2>{foundArticle.title}</h2>
           <h3>{foundArticle.byline}</h3>
           <p>{foundArticle.abstract}</p>
